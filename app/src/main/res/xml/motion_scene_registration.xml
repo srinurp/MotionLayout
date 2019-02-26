@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition
+        motion:constraintSetEnd="@+id/login"
+        motion:constraintSetStart="@+id/reg"
+        motion:duration="2000">
+        <OnClick motion:target="@+id/reg_login_b" />
+    </Transition>
+    <ConstraintSet android:id="@+id/login">
+        <Constraint
+            android:id="@id/register_b"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            motion:layout_constraintBottom_toTopOf="@+id/reg_login_b"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent" />
+        <Constraint
+            android:id="@id/reg_login_b"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already a member? Login."
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent" />
+        <Constraint
+            android:id="@id/login_b"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/password_l" />
+        <Constraint
+            android:id="@id/login_reg_b"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have account? Register."
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/login_b" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetEnd="@+id/reg"
+        motion:constraintSetStart="@+id/login"
+        motion:duration="1000">
+        <OnClick motion:target="@+id/login_reg_b" />
+    </Transition>
+    <ConstraintSet android:id="@+id/reg">
+        <Constraint
+            android:id="@+id/register_b"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/password_l" />
+        <Constraint
+            android:id="@+id/reg_login_b"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already a member? Login."
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/register_b" />
+        <Constraint
+            android:id="@+id/login_b"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            motion:layout_constraintBottom_toTopOf="@+id/login_reg_b"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent" />
+        <Constraint
+            android:id="@+id/login_reg_b"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have account? Register."
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent" />
+    </ConstraintSet>
+
+</MotionScene>

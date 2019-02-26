@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:motion="http://schemas.android.com/apk/res-auto">
+<Transition
+    motion:constraintSetStart="@layout/motion_width"
+    motion:constraintSetEnd="@+id/new_width"
+    motion:duration="2000">
+    <OnSwipe motion:touchAnchorId="@+id/button"
+        motion:touchAnchorSide="right"
+        motion:dragDirection="dragRight"/>
+</Transition>
+<ConstraintSet android:id="@+id/new_width">
+    <Constraint
+        android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="wide button"
+        motion:layout_constraintTop_toTopOf="parent"
+        motion:layout_constraintLeft_toLeftOf="parent"
+        motion:layout_constraintRight_toRightOf="parent" />
+</ConstraintSet>
+</MotionScene>

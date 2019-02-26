@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition
+        motion:constraintSetStart="@layout/motion_two_properties"
+        motion:constraintSetEnd="@+id/new_image"
+        motion:duration="2000">
+        <OnSwipe motion:touchAnchorId="@+id/img"
+            motion:touchAnchorSide="bottom"
+            motion:dragDirection="dragDown"/>
+    </Transition>
+    <ConstraintSet android:id="@+id/new_image">
+        <Constraint
+            android:id="@id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent" />
+    </ConstraintSet>
+</MotionScene>

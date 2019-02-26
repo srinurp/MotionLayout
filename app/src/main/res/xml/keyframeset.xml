@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition
+        motion:constraintSetStart="@+id/wish_start"
+        motion:constraintSetEnd="@+id/wish_end"
+        motion:duration="2000">
+        <OnClick motion:target="@+id/wish"/>
+        <KeyFrameSet>
+            <KeyPosition
+            motion:keyPositionType="pathRelative"
+            motion:percentY="0.25"
+            motion:framePosition="50"
+            motion:target="@id/tv1"/>
+            <KeyPosition
+                motion:keyPositionType="pathRelative"
+                motion:percentY="-0.25"
+                motion:framePosition="50"
+                motion:target="@id/tv2"/>
+            <KeyAttribute
+                motion:framePosition="50"
+                motion:target="@id/tv1"
+                android:rotation="-30"/>
+            <KeyAttribute
+                motion:framePosition="50"
+                motion:target="@id/tv2"
+                android:rotation="-30">
+                <CustomAttribute
+                    motion:attributeName="textSize"
+                    motion:customFloatValue ="20"/>
+            </KeyAttribute>
+            <KeyCycle
+                motion:framePosition="30"
+                motion:target="@id/tv1"
+                android:rotation="-30"
+                motion:waveShape="bounce"
+                motion:wavePeriod="3"/>
+        </KeyFrameSet>
+    </Transition>
+    <ConstraintSet android:id="@+id/wish_start">
+        <Constraint
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="best"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customFloatValue ="50"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="wishes"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/tv1">
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customFloatValue ="50"/>
+        </Constraint>
+        <Constraint
+            android:id="@+id/wish"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:text="wish"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/wish_end">
+        <Constraint
+            android:id="@id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="BEST"
+            android:layout_marginTop="400dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customFloatValue ="50"/>
+        </Constraint>
+        <Constraint
+            android:id="@id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="WISHES"
+            android:layout_marginTop="16dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/tv1">
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customFloatValue ="50"/>
+        </Constraint>
+        <Constraint
+            android:id="@id/wish"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:text="wish"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+</MotionScene>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition
+        motion:constraintSetEnd="@+id/prog"
+        motion:constraintSetStart="@layout/progress"
+        motion:duration="2000">
+        <OnClick motion:target="@+id/button" />
+    </Transition>
+    <ConstraintSet android:id="@+id/prog">
+        <Constraint
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="20"
+            android:scaleX="4"
+            android:layout_marginTop="100dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/button"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:text="show"
+            android:scaleX="4"
+            android:elevation="18dp"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/progressBar" />
+    </ConstraintSet>
+</MotionScene>
